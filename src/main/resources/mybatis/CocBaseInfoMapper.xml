@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="CocBaseInfo">
+	<resultMap id="BaseResultMap" type="com.slm.gme.demo.domain.CocBaseInfo">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="orgName" property="orgName" jdbcType="VARCHAR" />
+		<result column="contact" property="contact" jdbcType="VARCHAR" />
+		<result column="telephone" property="telephone" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="areaId" property="areaId" jdbcType="VARCHAR" />
+		<result column="areaName" property="areaName" jdbcType="VARCHAR" />
+		<result column="address" property="address" jdbcType="VARCHAR" />
+		<result column="businessLicense" property="businessLicense"
+			jdbcType="VARCHAR" />
+		<result column="businessLicenseUrl" property="businessLicenseUrl"
+			jdbcType="VARCHAR" />
+		<result column="logoUrl" property="logoUrl" jdbcType="VARCHAR" />
+		<result column="regulatoryIndustryId" property="regulatoryIndustryId"
+			jdbcType="VARCHAR" />
+		<result column="regulatoryIndustryName" property="regulatoryIndustryName"
+			jdbcType="VARCHAR" />
+		<result column="regulatoryAreaName" property="regulatoryAreaName"
+			jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="comRegisterId" property="comRegisterId"
+			jdbcType="INTEGER" />
+		<result column="comRegisterDate" property="comRegisterDate"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<!-- 公共字段列集合 -->
+	<sql id="Base_Column_List">
+		id,orgName,contact,telephone,email,areaId,areaName,address,
+		businessLicense,businessLicenseUrl,logoUrl,regulatoryIndustryId,regulatoryIndustryName,regulatoryAreaName,
+		remark,comRegisterId,comRegisterDate
+	</sql>
+
+	<!-- 根据map查询的动态语句公共定义 -->
+	<sql id="map_dynamicwhere">
+		<if test="orgName != null and orgName != ''">
+			and orgName = #{orgName}
+		</if>
+		<if test="contact != null and contact != ''">
+			and contact = #{contact}
+		</if>
+		<if test="telephone != null and telephone != ''">
+			and telephone = #{telephone}
+		</if>
+		<if test="email != null and email != ''">
+			and email = #{email}
+		</if>
+		<if test="areaId != null and areaId != ''">
+			and areaId = #{areaId}
+		</if>
+		<if test="areaName != null and areaName != ''">
+			and areaName = #{areaName}
+		</if>
+		<if test="address != null and address != ''">
+			and address = #{address}
+		</if>
+		<if test="businessLicense != null and businessLicense != ''">
+			and businessLicense = #{businessLicense}
+		</if>
+		<if test="businessLicenseUrl != null and businessLicenseUrl != ''">
+			and businessLicenseUrl = #{businessLicenseUrl}
+		</if>
+		<if test="logoUrl != null and logoUrl != ''">
+			and logoUrl = #{logoUrl}
+		</if>
+		<if test="regulatoryIndustryId != null and regulatoryIndustryId != ''">
+			and regulatoryIndustryId = #{regulatoryIndustryId}
+		</if>
+		<if test="regulatoryIndustryName != null and regulatoryIndustryName != ''">
+			and regulatoryIndustryName = #{regulatoryIndustryName}
+		</if>
+		<if test="comRegisterId != null and comRegisterId != ''">
+			and comRegisterId = #{comRegisterId}
+		</if>
+		<if test="comRegisterDate_Begin != null and comRegisterDate_Begin != ''">
+			<![CDATA[ and comRegisterDate >= #{comRegisterDate_Begin} ]]>
+		</if>
+		<if test="comRegisterDate_End != null and comRegisterDate_End != ''">
+			<![CDATA[ and comRegisterDate <= #{comRegisterDate_End} ]]>
+		</if>
+	</sql>
+
+	<!-- 根据object对象查询的动态语句公共定义 -->
+	<sql id="object_dynamicwhere">
+		<if test="orgName != null and orgName != ''">
+			and orgName = #{orgName}
+		</if>
+		<if test="contact != null and contact != ''">
+			and contact = #{contact}
+		</if>
+		<if test="telephone != null and telephone != ''">
+			and telephone = #{telephone}
+		</if>
+		<if test="email != null and email != ''">
+			and email = #{email}
+		</if>
+		<if test="areaId != null and areaId != ''">
+			and areaId = #{areaId}
+		</if>
+		<if test="areaName != null and areaName != ''">
+			and areaName = #{areaName}
+		</if>
+		<if test="address != null and address != ''">
+			and address = #{address}
+		</if>
+		<if test="businessLicense != null and businessLicense != ''">
+			and businessLicense = #{businessLicense}
+		</if>
+		<if test="businessLicenseUrl != null and businessLicenseUrl != ''">
+			and businessLicenseUrl = #{businessLicenseUrl}
+		</if>
+		<if test="logoUrl != null and logoUrl != ''">
+			and logoUrl = #{logoUrl}
+		</if>
+		<if test="regulatoryIndustryId != null and regulatoryIndustryId != ''">
+			and regulatoryIndustryId = #{regulatoryIndustryId}
+		</if>
+		<if test="regulatoryIndustryName != null and regulatoryIndustryName != ''">
+			and regulatoryIndustryName = #{regulatoryIndustryName}
+		</if>
+		<if test="comRegisterId != null and comRegisterId != ''">
+			and comRegisterId = #{comRegisterId}
+		</if>
+		<if test="comRegisterDate != null and comRegisterDate != ''">
+			<![CDATA[ and comRegisterDate = #{comRegisterDate} ]]>
+		</if>
+	</sql>
+
+	<!-- 根据条件查询 -->
+	<select id="queryListByMultiCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 根据ID查询 -->
+	<select id="queryObjectById" resultMap="BaseResultMap"
+		parameterType="int">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where id = #{id}
+	</select>
+
+	<!-- 根据对象的属性查询 -->
+	<select id="queryObjectByObject" resultMap="BaseResultMap"
+		parameterType="com.slm.gme.demo.domain.CocBaseInfo">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where 1 = 1
+		<include refid="object_dynamicwhere" />
+	</select>
+
+	<!-- 根据多条件查询一个对象 -->
+	<select id="queryObjectByMulitiCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 根据多ID查询 -->
+	<select id="queryObjectByMulitiIdList" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<!-- 分页数据查询 -->
+	<select id="queryListByPage" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from coc_base_info where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 分页数据统计 -->
+	<select id="queryCountByPage" resultType="int" parameterType="map">
+		select count(1)
+		from coc_base_info where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 数据保存 -->
+	<insert id="saveOrUpdate_save" parameterType="com.slm.gme.demo.domain.CocBaseInfo"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		coc_base_info
+		(orgName,contact,telephone,email,areaId,areaName,address,
+		businessLicense,businessLicenseUrl,logoUrl,regulatoryIndustryId,regulatoryIndustryName,regulatoryAreaName,
+		remark,comRegisterId,comRegisterDate)
+		values(#{orgName},#{contact},#{telephone},#{email},#{areaId},#{areaName},#{address},
+		#{businessLicense},#{businessLicenseUrl},#{logoUrl},#{regulatoryIndustryId},#{regulatoryIndustryName},#{regulatoryAreaName},
+		#{remark},#{comRegisterId},#{comRegisterDate})
+	</insert>
+
+	<!-- 数据更新 -->
+	<update id="saveOrUpdate_update" parameterType="com.slm.gme.demo.domain.CocBaseInfo">
+		update
+		coc_base_info set
+		orgName=#{orgName},contact=#{contact},telephone=#{telephone},email=#{email},
+		areaId=#{areaId},areaName=#{areaName},address=#{address},businessLicense=#{businessLicense},
+		businessLicenseUrl=#{businessLicenseUrl},logoUrl=#{logoUrl},regulatoryIndustryId=#{regulatoryIndustryId},
+		remark=#{remark},comRegisterId=#{comRegisterId},comRegisterDate=#{comRegisterDate},
+		regulatoryIndustryName=#{regulatoryIndustryName},regulatoryAreaName=#{regulatoryAreaName}
+		where id=#{id}
+	</update>
+
+	<!-- 根据ID进行删除 -->
+	<delete id="deleteById" parameterType="int">
+		delete from
+		coc_base_info
+		where id = #{id}
+	</delete>
+
+	<!-- 根据ID列表进行删除 -->
+	<delete id="deleteByIdList" parameterType="int">
+		delete from
+		coc_base_info where id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<!-- 根据条件进行删除 -->
+	<delete id="deleteByMulitiCondition" parameterType="map">
+		delete from
+		coc_base_info where id = #{id}
+	</delete>
+
+</mapper>
