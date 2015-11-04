@@ -9,6 +9,20 @@ import java.io.Serializable;
  * @author Administrator
  * @date 2015年9月6日 上午10:36:49
  */
-public interface StandardBean extends Serializable {
+public class StandardBean implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+  
+    //表主键，所有的表都必须要有ID的字段，此字段是设计的根本
+    protected Integer id;
+    
+    public Integer getId()
+    {
+        return id;
+    }
+    
+    public void setId(Integer id)
+    {
+        this.id = id;
+    }
 }

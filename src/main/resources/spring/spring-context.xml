@@ -12,6 +12,12 @@
                http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	<!-- 加载properties文件 -->
 	<context:property-placeholder location="classpath*:others/*.properties" />
+	
+	<bean id="ServiceFactory" class="com.slm.gme.common.ServiceFactory" />
+	
+	<bean class="com.slm.gme.common.IConfigHelper" init-method="loadAllconfigInFile">
+		<property name="configName" value="others/iconfig.xml" />
+	</bean>
 
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">

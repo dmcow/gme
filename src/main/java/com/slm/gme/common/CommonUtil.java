@@ -738,4 +738,27 @@ public class CommonUtil
         Matcher matcher = pattern.matcher(telNum);
         return matcher.matches();
     }
+    
+    /**
+     * 将对象转化为字符串，如果为空，则转化为空白字符串
+     * @author zhangziwen
+     * @param str
+     * @return 字符串
+     */
+    public static String trim(Object str)
+    {
+        if (null != str && str instanceof String)
+        {
+            return str.toString().trim();
+        }
+        
+        if (null == str)
+        {
+            return "";
+        }
+        else
+        {
+            return str.toString();
+        }
+    }
 }

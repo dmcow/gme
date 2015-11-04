@@ -3,14 +3,14 @@ package com.slm.gme.demo.domain;
 
 import java.util.Date;
 
-import com.slm.gme.framework.StandardBean;
+import com.slm.gme.framework.PojoDomain;
 
 /**
  * 机构基本信息对象
  * @author zhangziwen
  *
  */
-public class CocBaseInfo implements StandardBean
+public class CocBaseInfo extends PojoDomain
 {
     /**
      * 唯一序列化ID号
