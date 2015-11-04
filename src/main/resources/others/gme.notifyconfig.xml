@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notifyconfig>
+	<notifymodule>
+		<modulecode>1</modulecode>
+		<modulename>1试验任务推送接口类型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examTaskNotifyIF4" />
+				<!--modulecompt destComptCode="050000022" notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"/ 直接发送-->
+				<!--modulecompt destComptCode="060000022" notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"/ 直接入库，失败则 定时器重发-->
+				<!--modulecompt destComptCode="060000022" notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"/ 直接发送，失败入库-->
+
+				<!-- 删除 只能 直接 发送 -->
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examTaskNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examTaskNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>meger</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examTaskNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>2</modulecode>
+		<modulename>2检测试验结果回传接口类型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examResultNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="examResultNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="examResultNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>3</modulecode>
+		<modulename>3对接监管平台信息模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="monitorConfigNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="monitorConfigNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="monitorConfigNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>4</modulecode>
+		<modulename>4检测项目和试验类型的关联关系</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="itemExamRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="itemExamRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="itemExamRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>5</modulecode>
+		<modulename>5检测项目和人员关系模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="itemEmployeeRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="itemEmployeeRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="itemEmployeeRelationNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>6</modulecode>
+		<modulename>6操作员基本信息模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="operatorNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="operatorNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="operatorNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>7</modulecode>
+		<modulename>7设备基本信息模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="deviceNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="deviceNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<modulecompt destComptCode="040000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="deviceNotifyIF4" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>8</modulecode>
+		<modulename>8同步监管设备基本信息模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="deviceNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="deviceNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="deviceNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>9</modulecode>
+		<modulename>9机构信息模型</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="orgNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="orgNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="orgNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>10</modulecode>
+		<modulename>10人员信息</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="empNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="empNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="empNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>11</modulecode>
+		<modulename>11工程信息</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="projectNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="projectNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>delete</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.NormalNotifyStrategy"
+					templateName="projectNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+	<notifymodule>
+		<modulecode>12</modulecode>
+		<modulename>12报告信息同步</modulename>
+		<moduleoperator>
+			<operatortype>meger</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.DirectNotifyStrategy"
+					templateName="reportNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+
+	<notifymodule>
+		<modulecode>13</modulecode>
+		<modulename>13曲线信息同步</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="curveNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="curveNotifyIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+
+	<notifymodule>
+		<modulecode>14</modulecode>
+		<modulename>14IC芯片绑定委托信息同步</modulename>
+		<moduleoperator>
+			<operatortype>add</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="collecOrderIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>update</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="collecOrderIF5" />
+			</modulecompts>
+		</moduleoperator>
+		<moduleoperator>
+			<operatortype>meger</operatortype>
+			<modulecompts>
+				<!-- 同步监管 -->
+				<modulecompt destComptCode="050000022"
+					notifyStrategy="com.slm.gme.notify.strategy.impl.MiddleNotifyStrategy"
+					templateName="collecOrderIF5" />
+			</modulecompts>
+		</moduleoperator>
+	</notifymodule>
+</notifyconfig>
+

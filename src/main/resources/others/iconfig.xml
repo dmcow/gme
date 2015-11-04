@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- 平台公共性配置 -->
+	<config name="gme.common.properties"
+		path="others/gme.common.properties" />
+
+	<!-- httpServer服务端配置 -->
+	<config name="gme.httpserver.config"
+		path="others/gme.httpserver.config.xml" />
+</configs>
