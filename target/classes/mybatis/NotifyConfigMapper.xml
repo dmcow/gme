@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="NotifyConfig">
+	<resultMap id="BaseResultMap" type="com.slm.gme.notify.domain.NotifyConfig">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="areaCode" property="areaCode" jdbcType="VARCHAR" />
+		<result column="comptType" property="comptType" jdbcType="INTEGER" />
+		<result column="comptCode" property="comptCode" jdbcType="VARCHAR" />
+		<result column="notifyUrl" property="notifyUrl" jdbcType="VARCHAR" />
+		<result column="protocolType" property="protocolType" jdbcType="INTEGER" />
+		<result column="securityKey" property="securityKey" jdbcType="VARCHAR" />
+		<result column="note" property="note" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- 根据条件查询 -->
+	<select id="queryListByMultiCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select *  from t_gme_notifyConfig
+	</select>
+
+	<!-- 根据ID进行删除 -->
+	<delete id="deleteById" parameterType="int">
+		delete from
+		t_gme_notifyConfig
+		where id = #{id}
+	</delete>
+
+	<!-- 根据ID列表进行删除 -->
+	<delete id="deleteByIdList" parameterType="int">
+		delete from
+		t_gme_notifyConfig where id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<!-- 根据条件进行删除 -->
+	<delete id="deleteByMulitiCondition" parameterType="map">
+		delete from
+		t_gme_notifyConfig where id = #{id}
+	</delete>
+
+</mapper>
