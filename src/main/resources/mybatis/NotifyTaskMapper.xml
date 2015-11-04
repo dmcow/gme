@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="NotifyTask">
+	<resultMap id="BaseResultMap" type="com.slm.gme.notify.domain.NotifyTask">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="messageId" property="messageId" jdbcType="VARCHAR" />
+		<result column="actionType" property="actionType" jdbcType="INTEGER" />
+		<result column="destAreaCode" property="destAreaCode" jdbcType="VARCHAR" />
+		<result column="destComptType" property="destComptType" jdbcType="INTEGER" />
+		<result column="destComptCode" property="destComptCode" jdbcType="VARCHAR" />
+		<result column="objectId" property="objectId" jdbcType="INTEGER" />
+		<result column="serviceId" property="serviceId" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="createDate" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="lastUpdateDate" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+		<result column="failCount" property="failCount" jdbcType="INTEGER" />
+		<result column="interfaceType" property="interfaceType" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<!-- 公共字段列集合 -->
+	<sql id="Base_Column_List">
+		id,messageId,actionType,destAreaCode,destComptType,destComptCode,objectId,serviceId,
+		type,status,createDate,lastUpdateDate,failCount,interfaceType
+	</sql>
+
+	<!-- 根据map查询的动态语句公共定义 -->
+	<sql id="map_dynamicwhere">
+		<if test="messageId != null and messageId != ''">
+			and messageId = #{messageId}
+		</if>
+		<if test="actionType != null and actionType != ''">
+			and actionType = #{actionType}
+		</if>
+		<if test="destAreaCode != null and destAreaCode != ''">
+			and destAreaCode = #{destAreaCode}
+		</if>
+		<if test="destComptType != null and destComptType != ''">
+			and destComptType = #{destComptType}
+		</if>
+		<if test="destComptCode != null and destComptCode != ''">
+			and destComptCode = #{destComptCode}
+		</if>
+		<if test="objectId != null and objectId != ''">
+			and objectId = #{objectId}
+		</if>
+		<if test="serviceId != null and serviceId != ''">
+			and serviceId = #{serviceId}
+		</if>
+		<if test="type != null and type != ''">
+			and type = #{type}
+		</if>
+		<if test="status != null and status != ''">
+			and status = #{status}
+		</if>
+		<if test="createDate != null and createDate != ''">
+			and createDate = #{createDate}
+		</if>
+		<if test="lastUpdateDate != null and lastUpdateDate != ''">
+			and lastUpdateDate = #{lastUpdateDate}
+		</if>
+		<if test="failCount != null and failCount != ''">
+			and failCount = #{failCount}
+		</if>
+		<if test="interfaceType != null and interfaceType != ''">
+			and interfaceType = #{interfaceType}
+		</if>
+	</sql>
+
+	<!-- 根据object对象查询的动态语句公共定义 -->
+	<sql id="object_dynamicwhere">
+		<if test="messageId != null and messageId != ''">
+			and messageId = #{messageId}
+		</if>
+		<if test="actionType != null and actionType != ''">
+			and actionType = #{actionType}
+		</if>
+		<if test="destAreaCode != null and destAreaCode != ''">
+			and destAreaCode = #{destAreaCode}
+		</if>
+		<if test="destComptType != null and destComptType != ''">
+			and destComptType = #{destComptType}
+		</if>
+		<if test="destComptCode != null and destComptCode != ''">
+			and destComptCode = #{destComptCode}
+		</if>
+		<if test="objectId != null and objectId != ''">
+			and objectId = #{objectId}
+		</if>
+		<if test="serviceId != null and serviceId != ''">
+			and serviceId = #{serviceId}
+		</if>
+		<if test="type != null and type != ''">
+			and type = #{type}
+		</if>
+		<if test="status != null and status != ''">
+			and status = #{status}
+		</if>
+		<if test="createDate != null and createDate != ''">
+			and createDate = #{createDate}
+		</if>
+		<if test="lastUpdateDate != null and lastUpdateDate != ''">
+			and lastUpdateDate = #{lastUpdateDate}
+		</if>
+		<if test="failCount != null and failCount != ''">
+			and failCount = #{failCount}
+		</if>
+		<if test="interfaceType != null and interfaceType != ''">
+			and interfaceType = #{interfaceType}
+		</if>
+	</sql>
+	
+		<!-- 数据保存 -->
+	<insert id="saveOrUpdate_save" parameterType="com.slm.gme.notify.domain.NotifyTask"
+		useGeneratedKeys="true" keyProperty="id">
+				insert into t_gme_notify
+				(messageid, interfacetype, actiontype, destareacode, destcompttype, destcomptcode, 
+				objectid, serviceid, type, status, createdate, lastupdatedate, failcount)
+				values
+				(#{messageId}, #{interfaceType}, #{actionType}, #{destareaCode}, #{destcomptType}, #{destComptCode}, 
+				#{objectId}, #{serviceId}, #{type}, #{status}, #{createDate}, #{lastUpdateDate}, #{failCount})
+	</insert>
+
+	<!-- 数据更新 -->
+	<update id="saveOrUpdate_update" parameterType="com.slm.gme.notify.domain.NotifyTask">
+		update t_gme_notify set
+		messageId=#{messageId},
+		interfaceType=#{interfaceType},
+		actionType=#{actionType},
+		destareaCode=#{destareaCode},
+		destcomptType=#{destcomptType},
+		destComptCode=#{destComptCode},
+		objectId=#{objectId},
+		serviceId=#{serviceId},
+		type=#{type},
+		status=#{status},
+		createDate=#{createDate},
+		lastUpdateDate=#{lastUpdateDate},
+		failCount=#{failCount}
+		where id=#{id}
+	</update>
+
+	<!-- 根据条件查询 -->
+	<select id="queryListByMultiCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 根据ID查询 -->
+	<select id="queryObjectById" resultMap="BaseResultMap"
+		parameterType="int">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where id = #{id}
+	</select>
+
+	<!-- 根据对象的属性查询 -->
+	<select id="queryObjectByObject" resultMap="BaseResultMap"
+		parameterType="com.slm.gme.notify.domain.NotifyTask">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where 1 = 1
+		<include refid="object_dynamicwhere" />
+	</select>
+
+	<!-- 根据多条件查询一个对象 -->
+	<select id="queryObjectByMulitiCondition" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 根据多ID查询 -->
+	<select id="queryObjectByMulitiIdList" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<!-- 分页数据查询 -->
+	<select id="queryListByPage" resultMap="BaseResultMap"
+		parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from t_gme_notify where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 分页数据统计 -->
+	<select id="queryCountByPage" resultType="int" parameterType="map">
+		select count(1)
+		from t_gme_notify where 1 = 1
+		<include refid="map_dynamicwhere" />
+	</select>
+
+	<!-- 根据ID进行删除 -->
+	<delete id="deleteById" parameterType="int">
+		delete from
+		t_gme_notify
+		where id = #{id}
+	</delete>
+
+	<!-- 根据ID列表进行删除 -->
+	<delete id="deleteByIdList" parameterType="int">
+		delete from
+		t_gme_notify where id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+	<!-- 根据条件进行删除 -->
+	<delete id="deleteByMulitiCondition" parameterType="map">
+		delete from
+		t_gme_notify where id = #{id}
+	</delete>
+
+</mapper>
