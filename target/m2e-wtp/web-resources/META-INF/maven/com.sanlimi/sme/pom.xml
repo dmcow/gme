@@ -12,7 +12,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd_HH_mm</maven.build.timestamp.format>
 		<!-- 所有项目依赖的JRA包版本号统一由parent维护，在parent中使用dependencyManagement管理，子项目只需要 
 			dependencies，且去除version -->
-		<spring.version>4.2.0.RELEASE</spring.version>
+		<spring.version>4.2.7.RELEASE</spring.version>
 	</properties>
 	
 	<distributionManagement>
